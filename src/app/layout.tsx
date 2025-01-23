@@ -1,12 +1,8 @@
-"use client";
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Suspense } from "react";
+import { Metadata } from "next";
+import Providers from "./@components/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const queryClient = new QueryClient();
+export const metadata: Metadata = {
+  title: "SWAPI Explorer",
+  description: "SWAPI by Felipe Gorostiaga",
+};
 
 export default function RootLayout({
   children,
@@ -44,13 +43,7 @@ export default function RootLayout({
             <Navbar />
           </div>
           <div className="row-[2] h-full overflow-y-auto pt-[30px] md:pt-[50px]">
-            <QueryClientProvider client={queryClient}>
-              <TooltipProvider>
-                <Suspense>
-                  <NuqsAdapter>{children}</NuqsAdapter>
-                </Suspense>
-              </TooltipProvider>
-            </QueryClientProvider>
+            <Providers>{children}</Providers>
           </div>
         </div>
       </body>

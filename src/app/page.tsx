@@ -1,10 +1,3 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Star Wars API Explorer",
-  description: "Explore the vast Star Wars universe with this API explorer.",
-};
-
 export default function Home() {
   return (
     <div className="max-w-4xl w-full mx-auto gap-6 px-6 flex flex-col items-center justify-start text-center">
