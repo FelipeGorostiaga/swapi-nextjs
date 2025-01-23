@@ -14,8 +14,7 @@ export default function Home() {
       <p className="text-xl text-muted-foreground text-neutral-300 text-center max-w-2xl">
         Greetings, young Padawans. Present myself, I must! Skilled in the ways
         of coding, I am. From a galaxy far, far away, I come to show you my
-        passion for web development. Strong with frontend skills, the Force in
-        me is.
+        passion for web development. Strong, the Force in me is.
       </p>
     </div>
   );
