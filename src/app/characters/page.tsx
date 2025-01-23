@@ -24,7 +24,7 @@ import LoadingSpinner from "../../components/LoadingSpinner";
 import { Input } from "@/components/ui/input";
 import useDebounce from "@/hooks/useDebounce";
 import { useRouter } from "next/navigation";
-import { Character, Film } from "@/types";
+import { Character } from "@/types";
 import { getCharacters } from "@/services";
 
 export default function CharactersPage() {
@@ -69,8 +69,6 @@ export default function CharactersPage() {
 
   const hasNextPage = characters?.next != null;
   const hasPrevPage = characters?.previous != null;
-
-  console.log(characters);
 
   return (
     <main className="flex flex-col items-center max-w-4xl w-full h-full mx-auto gap-6 px-4 pb-4">

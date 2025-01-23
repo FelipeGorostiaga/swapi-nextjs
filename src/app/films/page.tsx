@@ -70,8 +70,6 @@ export default function FilmsPage() {
   const hasNextPage = films?.next != null;
   const hasPrevPage = films?.previous != null;
 
-  console.log(films);
-
   return (
     <main className="flex flex-col items-center max-w-4xl w-full h-full mx-auto gap-6 px-4">
       <Input

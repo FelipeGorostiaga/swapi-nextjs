@@ -1,7 +1,7 @@
 "use client";
 
 import LoadingSpinner from "@/components/LoadingSpinner";
-import { getCharacter, getFilm } from "@/services";
+import { getCharacter } from "@/services";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, useRouter } from "next/navigation";
 
@@ -12,7 +12,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useEffect } from "react";
 import ErrorCard from "@/components/ErrorCard";
 const pressStart2P = Press_Start_2P({
   weight: "400",

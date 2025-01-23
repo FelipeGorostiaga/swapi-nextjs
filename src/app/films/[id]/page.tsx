@@ -12,7 +12,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useEffect } from "react";
 import ErrorCard from "@/components/ErrorCard";
 const pressStart2P = Press_Start_2P({
   weight: "400",
