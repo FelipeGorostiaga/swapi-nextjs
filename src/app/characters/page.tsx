@@ -67,6 +67,11 @@ export default function CharactersPage() {
     router.push(`/characters/${characterId}`);
   };
 
+  const handleChangeInput = (val: string) => {
+    setPage(1);
+    setQuery(val);
+  };
+
   const hasNextPage = characters?.next != null;
   const hasPrevPage = characters?.previous != null;
 
@@ -75,7 +80,7 @@ export default function CharactersPage() {
       <Input
         placeholder="Search..."
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => handleChangeInput(e.target.value)}
       />
       {isLoading && <LoadingSpinner className={""} />}
       {!isLoading && (

@@ -67,6 +67,11 @@ export default function FilmsPage() {
     router.push(`/films/${filmId}`);
   };
 
+  const handleChangeInput = (val: string) => {
+    setPage(1);
+    setQuery(val);
+  };
+
   const hasNextPage = films?.next != null;
   const hasPrevPage = films?.previous != null;
 
@@ -75,7 +80,7 @@ export default function FilmsPage() {
       <Input
         value={query}
         placeholder="Search..."
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => handleChangeInput(e.target.value)}
       />
       {isLoading && <LoadingSpinner className={""} />}
       {!isLoading && (
