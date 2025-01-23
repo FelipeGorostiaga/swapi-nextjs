@@ -11,7 +11,9 @@ const ErrorCard: FC<{ msg: string }> = ({ msg }) => {
         alt={"yoda"}
         className="rounded-full"
       />
-      <h3 className="scroll-m-20 text-xl tracking-tight">{msg}</h3>
+      <h3 className="scroll-m-20 text-lg tracking-tight px-4 text-center max-w-[400px] font-thin">
+        {msg}
+      </h3>
     </div>
   );
 };
