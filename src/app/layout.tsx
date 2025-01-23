@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./@components/Navbar";
+import Navbar from "../components/Navbar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +17,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Star Wars API Explorer",
-  description: "Explore the vast Star Wars universe with this API explorer.",
-};
+// Create a client
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -37,12 +39,16 @@ export default function RootLayout({
           h-screen
         `}
       >
-        <div className="relative grid grid-rows-[auto_1fr] w-full h-full">
-          <div className="row-[1] fixed top-0 left-0 right-0 z-10">
+        <div className="relative grid grid-rows-[auto_1fr] w-full min-h-screen">
+          <div className="row-[1]">
             <Navbar />
           </div>
-          <div className="row-[2] overflow-y-auto pt-[80px] mt-12">
-            {children}
+          <div className="row-[2] h-full overflow-y-auto pt-[30px] md:pt-[50px]">
+            <QueryClientProvider client={queryClient}>
+              <TooltipProvider>
+                <NuqsAdapter>{children}</NuqsAdapter>
+              </TooltipProvider>
+            </QueryClientProvider>
           </div>
         </div>
       </body>
