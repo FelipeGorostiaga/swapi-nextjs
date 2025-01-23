@@ -1,7 +1,13 @@
 ## Installation
 
 ```bash
-npm i
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
 ```
 
 ## Getting Started
@@ -17,3 +23,5 @@ pnpm dev
 # or
 bun dev
 ```
+
+Explore the Star Wars universe...
